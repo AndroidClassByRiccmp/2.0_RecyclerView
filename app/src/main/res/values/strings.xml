@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Navegacion RecyclerView</string>
+
+    <string name="general_lorem_title">Integer aliquet</string>
+    <string name="general_lorem_title_short">Integer</string>
+    <string name="general_lorem_description">Integer aliquet tortor ac enim ornare.</string>
+    <string name="general_lorem_total">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tellus risus, condimentum congue risus vitae, gravida gravida odio. Duis mi leo, rutrum sed porta in, imperdiet eget nunc. Nam ultrices dui vel volutpat euismod. Mauris est leo, efficitur sed libero ac, egestas posuere diam. Proin volutpat leo nec elit scelerisque interdum. Curabitur fringilla facilisis est id pellentesque. Fusce varius augue eget libero condimentum, non sagittis nunc accumsan. Nunc dignissim nunc placerat leo condimentum ultricies. Etiam faucibus sapien vitae nulla pellentesque, ac tristique lacus facilisis.</string>
+
+    <string name="view_navigation">Navegación</string>
+    <string name="view_list">Listado</string>
+    <string name="view_list_multiple">Listado Multiple Diseño</string>
+</resources>
