@@ -4,9 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.item_pelicula_accion.view.*
+import kotlinx.android.synthetic.main.item_pelicula_drama.view.*
+import kotlinx.android.synthetic.main.item_pelicula_romance.view.*
 import pe.com.bootcamp.nabegacionrecyclerview.R
 import pe.com.bootcamp.nabegacionrecyclerview.model.Pelicula
-import pe.com.bootcamp.nabegacionrecyclerview.util.ItemClickListener
 
 
 class PeliculaCategoriaAdapter() : RecyclerView.Adapter<BaseViewHolder<*>>() {
@@ -31,22 +33,22 @@ class PeliculaCategoriaAdapter() : RecyclerView.Adapter<BaseViewHolder<*>>() {
             TYPE_ACCION -> {
 
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_pelicula, parent, false)
+                    .inflate(R.layout.item_pelicula_accion, parent, false)
                 PeliculaAccionHolder(view)
 
             }
             TYPE_ROMANCE -> {
 
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_pelicula, parent, false)
-                PeliculaAccionHolder(view)
+                    .inflate(R.layout.item_pelicula_romance, parent, false)
+                PeliculaRomanceHolder(view)
 
             }
             TYPE_DRAMA -> {
 
                 val view = LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_pelicula, parent, false)
-                PeliculaAccionHolder(view)
+                    .inflate(R.layout.item_pelicula_drama, parent, false)
+                PeliculaDramaHolder(view)
 
             }
             else -> throw IllegalArgumentException("Invalid view type")
@@ -57,16 +59,28 @@ class PeliculaCategoriaAdapter() : RecyclerView.Adapter<BaseViewHolder<*>>() {
     override fun onBindViewHolder(holder: BaseViewHolder<*>, position: Int) {
         //Este metodo itera de acuerdo a lo que indicas en el metodo getItemCount
 
+        val pelicula = arrayPeliculas[position]
 
         when (holder) {
             is PeliculaAccionHolder -> {
+                holder.bind(pelicula)
             }
+
+            is PeliculaDramaHolder -> {
+                holder.bind(pelicula)
+            }
+
+            is PeliculaRomanceHolder -> {
+                holder.bind(pelicula)
+            }
+
         }
         //holder.bindProduct(pelicula)
 
     }
 
     override fun getItemViewType(position: Int): Int {
+        val xd = arrayPeliculas[position].genero
         return when (arrayPeliculas[position].genero) {
             "accion" -> TYPE_ACCION
             "romance" -> TYPE_ROMANCE
@@ -85,10 +99,24 @@ class PeliculaCategoriaAdapter() : RecyclerView.Adapter<BaseViewHolder<*>>() {
     inner class PeliculaAccionHolder(private val view: View) : BaseViewHolder<Pelicula>(view) {
         override fun bind(item: Pelicula) {
 
+            itemView.tviTitleAccion.text = "${item.genero}:  ${item.nombre}"
+
         }
     }
 
+    inner class PeliculaDramaHolder(private val view: View) : BaseViewHolder<Pelicula>(view) {
+        override fun bind(item: Pelicula) {
+            itemView.tviTitleDrama.text = "${item.genero}: ${item.nombre}"
 
+        }
+    }
+
+    inner class PeliculaRomanceHolder(private val view: View) : BaseViewHolder<Pelicula>(view) {
+        override fun bind(item: Pelicula) {
+            itemView.tviTitleRomance.text = "${item.genero}:  ${item.nombre}"
+
+        }
+    }
 }
 
 abstract class BaseViewHolder<T>(itemView: View) : RecyclerView.ViewHolder(itemView) {
