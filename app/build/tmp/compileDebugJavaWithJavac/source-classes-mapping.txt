@@ -1,0 +1,2 @@
+pe/com/bootcamp/nabegacionrecyclerview/BuildConfig.java
+ pe.com.bootcamp.nabegacionrecyclerview.BuildConfig
