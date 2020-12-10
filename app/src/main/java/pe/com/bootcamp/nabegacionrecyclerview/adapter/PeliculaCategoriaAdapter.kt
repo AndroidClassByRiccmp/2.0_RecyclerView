@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import pe.com.bootcamp.nabegacionrecyclerview.R
 import pe.com.bootcamp.nabegacionrecyclerview.model.Pelicula
-import pe.com.bootcamp.nabegacionrecyclerview.util.ItemClickListener
 
 
 class PeliculaCategoriaAdapter() : RecyclerView.Adapter<BaseViewHolder<*>>() {
