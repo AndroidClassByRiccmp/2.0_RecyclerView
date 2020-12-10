@@ -22,16 +22,15 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:scaleType="centerInside"
-
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintDimensionRatio="h,1:1.8"
+            app:layout_constraintDimensionRatio="h,1:1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.2" />
 
 
         <TextView
-            android:id="@+id/tviNombrePelicula"
+            android:id="@+id/tviTitleDrama"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -53,20 +52,10 @@
             android:lines="2"
             android:text="@string/general_lorem_title"
             android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="@+id/tviNombrePelicula"
+            app:layout_constraintEnd_toEndOf="@+id/tviForm"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tviNombrePelicula"
-            app:layout_constraintTop_toBottomOf="@+id/tviNombrePelicula" />
-
-        <Button
-            android:id="@+id/butEliminar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tviNombrePelicula"
-            app:layout_constraintStart_toEndOf="@+id/iviProduct"
-            app:layout_constraintTop_toBottomOf="@+id/tviNombrePelicula" />
+            app:layout_constraintStart_toStartOf="@+id/tviForm"
+            app:layout_constraintTop_toBottomOf="@+id/tviForm" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
